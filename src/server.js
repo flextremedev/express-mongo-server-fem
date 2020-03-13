@@ -13,5 +13,7 @@ app.use(urlencoded({ extended: true }))
 app.use(morgan('dev'))
 
 export const start = () => {
-  app.listen(3000, 'Server listening on 3000...')
+  app.listen(3000, () => {
+    console.log('Server listening on 3000...')
+  })
 }
