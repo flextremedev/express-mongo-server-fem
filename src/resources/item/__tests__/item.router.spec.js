@@ -1,4 +1,4 @@
-import router from '../item.router'
+import { itemRouter } from '../item.router'
 
 describe('item router', () => {
   test('has crud routes', () => {
@@ -11,7 +11,7 @@ describe('item router', () => {
     ]
 
     routes.forEach(route => {
-      const match = router.stack.find(
+      const match = itemRouter.stack.find(
         s => s.route.path === route.path && s.route.methods[route.method]
       )
       expect(match).toBeTruthy()
