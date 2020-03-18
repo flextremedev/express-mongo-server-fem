@@ -13,7 +13,10 @@ export const getMany = model => async (req, res) => {
   res.status(200).json({ data: docs })
 }
 
-export const createOne = model => async (req, res) => {}
+export const createOne = model => async (req, res) => {
+  const doc = await model.create({ ...req.body, createdBy: req.user._id })
+  res.status(201).json({ data: doc })
+}
 
 export const updateOne = model => async (req, res) => {}
 
