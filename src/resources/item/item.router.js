@@ -1,15 +1,13 @@
 import { Router } from 'express'
-const controller = (req, res) => {
-  res.send({ message: 'hello' })
-}
+import { itemControllers } from './item.controllers'
 
 export const itemRouter = Router()
 itemRouter
   .route('/')
-  .get(controller)
-  .post(controller)
+  .get(itemControllers.getOne)
+  .post(itemControllers.createOne)
 itemRouter
   .route('/:id')
-  .put(controller)
-  .delete(controller)
-  .get(controller)
+  .put(itemControllers.updateOne)
+  .delete(itemControllers.removeOne)
+  .get(itemControllers.getOne)
