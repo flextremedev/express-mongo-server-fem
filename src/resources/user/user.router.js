@@ -1,9 +1,7 @@
 import { Router } from 'express'
 import { me, updateMe } from './user.controllers'
 
-const router = Router()
+export const userRouter = Router()
 
-router.get('/', me)
-router.put('/', updateMe)
-
-export default router
+userRouter.get('/', me)
+userRouter.put('/', updateMe)
